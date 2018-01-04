@@ -110,7 +110,7 @@ export default {
       let self = this
       getTime().then((response) => {
         self.time = Math.floor(response.data.now / 1000) * 1000
-        self.$store.dispatch('tick/startTimer', self.getTick)
+        self.$store.dispatch('ticker/startTimer', self.getTick)
       }).catch((err) => {
         self.showSnack()
         console.log(err)
@@ -132,7 +132,7 @@ export default {
         .then((response) => {
           // let json = JSON.parse(response.data) || []
           // ticker.failCount = 0
-          self.$store.dispatch('tick/resetFailCount')
+          self.$store.dispatch('ticker/resetFailCount')
           for (let i = 0; i < self.list.length; i++) {
             self.list[i].resetTick()
           }
@@ -187,10 +187,10 @@ export default {
         })
         .catch((error) => {
           // reject(err)
-          self.$store.dispatch('tick/incrFailCount')
+          self.$store.dispatch('ticker/incrFailCount')
           if (self.$store.state.tick.failCount > 15) {
             self.disconnected = true
-            self.$store.dispatch('tick/stopTimer')
+            self.$store.dispatch('ticker/stopTimer')
             self.showSnack()
           }
           console.log(error)
