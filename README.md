@@ -1,5 +1,10 @@
 # bitalert
 project for bit-alert.info
 
-bit-alert.infoの一部を除くソースコードを公開する予定です。
-準備ができるまでしばらくお待ちください。
+Web版 https://bit-alert.info
+electron版 https://github.com/bitalert/bitalert/releases
+
+仮想通貨のアラート機能をwebアプリとして実装する
+オープンソースプロジェクトです。
+vueで実装されておりvue-electronを利用して
+デスクトップ版をパッケージにしています。
